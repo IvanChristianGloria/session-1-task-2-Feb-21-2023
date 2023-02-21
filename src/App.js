@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Display from './Display'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  state = {
+    id: 0,
+    rec: [
+    {
+      id: 1,
+      product_name : 'Milk',
+      price: 85,
+      quantity: 1 
+    },
+    {
+      id: 2,
+      product_name : 'Eggs',
+      price: 125,
+      quantity: 2
+    },
+    {
+      id: 3,
+      product_name : 'Rice',
+      price: 45,
+      quantity: 5 
+    },
+    {
+      id: 4,
+      product_name : 'Water',
+      price: 32,
+      quantity: 3
+    }
+  ]}
+
+  render() {
+    return (
+      <div>
+        <Display d={this.state.rec} />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
